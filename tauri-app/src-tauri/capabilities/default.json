@@ -8,6 +8,29 @@
   "permissions": [
     "core:default",
     "opener:default",
-    "fs:default"
+    "fs:default",
+    "process:default",
+    "dialog:default",
+    {
+      "identifier": "fs:scope",
+      "allow": [
+        {"path": "$DOCUMENT/**"},
+        {"path": "$DOCUMENT/notes/**"}
+      ]
+    },
+    {
+      "identifier": "fs:write-all",
+      "allow": [
+        {"path": "$DOCUMENT/**"},
+        {"path": "$DOCUMENT/notes/**"}
+      ]
+    },
+    {
+      "identifier": "fs:read-all",
+      "allow": [
+        {"path": "$DOCUMENT/**"},
+        {"path": "$DOCUMENT/notes/**"}
+      ]
+    }
   ]
 }

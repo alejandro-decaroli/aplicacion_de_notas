@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles.css">
+    <script type="module" src="/src/main.ts" defer></script>
+    <title>Crear Nota</title>
+</head>
+<body>
+    <main class="container">
+        <img class="logo" src="src/assets/tauri.svg" alt="Logo">
+        <h1>Crear Nota</h1>
+        <form class="note-form">
+            <input type="text" id="note-name" placeholder="Nombre del archivo">
+            <textarea id="note-content" placeholder="Escribe tu nota aquí..." rows="10"></textarea>
+            <button type="submit" class="note-button">Guardar Nota</button>
+        </form>
+        <button class="back-button">Volver</button>
+        <button class="exit-button">Salir</button>
+    </main>
+</body>
+</html>
