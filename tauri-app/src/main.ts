@@ -8,6 +8,8 @@ let backButtonEl: HTMLButtonElement | null;
 let noteFormEl: HTMLFormElement | null;
 let noteName: HTMLInputElement | null;
 let noteContent: HTMLTextAreaElement | null;
+let createNoteButtonEl: HTMLButtonElement | null;
+let viewNoteButtonEl: HTMLButtonElement | null;
 let baseDir: string;
 
 async function goodBye() {
@@ -78,5 +80,13 @@ window.addEventListener("DOMContentLoaded", () => {
   noteFormEl?.addEventListener("submit", (e) => {
     e.preventDefault();
     createNote(noteName!.value, noteContent!.value);
+  });
+  createNoteButtonEl = document.querySelector("#create-note-button");
+  createNoteButtonEl?.addEventListener("click", () => {
+    window.location.href = "creanota.html";
+  });
+  viewNoteButtonEl = document.querySelector("#view-note-button");
+  viewNoteButtonEl?.addEventListener("click", () => {
+    window.location.href = "vernota.html";
   });
 });

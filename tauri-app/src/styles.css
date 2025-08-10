@@ -19,7 +19,7 @@ body {
     text-align: center;
 }
 
-#notes-list {
+.notes-list {
     width: 50%;
     margin: 0 auto;
     display: flex;
@@ -28,7 +28,7 @@ body {
     list-style: none;
 }
 
-#notes-list li {
+.notes-list button {
     background-color: #414170;
     padding: 10px;
     border-radius: 5px;
@@ -39,12 +39,12 @@ h1 {
     color: #fff;
 }
 
-#notes-list li a {
+.notes-list button a {
     color: #ffffff;
     text-decoration: none;
 }
 
-#notes-list li:hover {
+.notes-list button:hover {
     background-color: #6666a5;
     cursor: pointer;
     transition: background-color 0.4s ease;
