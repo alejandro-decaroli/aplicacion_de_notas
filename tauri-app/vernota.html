@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles.css">
+    <script type="module" src="/src/main.ts" defer></script>
     <title>Ver Nota</title>
 </head>
 <body>
-    <h1>Ver Nota</h1>
-    <form id="note-form">
-        <textarea id="note-input" placeholder="Escribe tu nota aquí..." rows="10" style="width: 100%;"></textarea>
-        <button type="submit">Ver Nota</button>
-    </form>
-    <p id="status-message"></p>
+    <main class="container">
+        <img class="logo" src="src/assets/tauri.svg" alt="Logo">
+        <h1>Tus Notas</h1>
+        <div class="contenedor_notas">
+            <table>
+                <tr class="header">
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+                <tbody class="table_body">
+                    <tr class="note">
+                        <td class="note_actions">
+                            <button class="note-button" id="view-note-button_2">Ver</button>
+                            <button class="note-button" id="delete-note-button">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons">
+            <button class="back-button">Volver</button>
+            <button class="exit-button">Salir</button>
+        </div>
+    </main>
 </body>
 </html>

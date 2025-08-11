@@ -143,4 +143,115 @@ h1 {
     transition: background-color 0.4s ease;
 }
 
+
+
+.contenedor_notas {
+    color: #fff;
+    margin: 0 auto;
+    width: 80%;
+    min-height: 50vh;
+    background-color: #0f0f24;
+    border-radius: 20px;
+}
+
+.contenedor_notas table {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+}
+
+.header {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.table_body {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.note {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.note_name {
+    width: 100%;
+
+}
+
+.note_date {
+    width: 100%;
+
+}
+
+.note_actions {
+    width: 100%;
+   
+}
+
+#view-note-button_2 {
+    width: 30%;
+    height: 40px;
+    background-color: #414170;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+#view-note-button_2:hover {
+    background-color: #6666a5;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
     
+#delete-note-button {
+    width: 30%;
+    height: 40px;
+    background-color: #b10c0c;
+    color: #ffffff;
+    border: none;
+    padding:10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+#delete-note-button:hover {
+    background-color: #ff1515;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+.note {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}

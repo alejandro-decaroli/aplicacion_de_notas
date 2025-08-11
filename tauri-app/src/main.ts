@@ -1,6 +1,6 @@
 import { exit } from '@tauri-apps/plugin-process';
 import { ask, message } from '@tauri-apps/plugin-dialog';
-import { create, exists, open, mkdir } from '@tauri-apps/plugin-fs';
+import { create, exists, open, mkdir, readDir, readFile, remove } from '@tauri-apps/plugin-fs';
 import * as path from '@tauri-apps/api/path';
 
 let exitButtonEl: HTMLButtonElement | null;
@@ -10,7 +10,10 @@ let noteName: HTMLInputElement | null;
 let noteContent: HTMLTextAreaElement | null;
 let createNoteButtonEl: HTMLButtonElement | null;
 let viewNoteButtonEl: HTMLButtonElement | null;
+let deleteNoteButtonEl: HTMLButtonElement | null;
+let editNoteButtonEl: HTMLButtonElement | null;
 let baseDir: string;
+let tableBody: HTMLTableElement | null;
 
 async function goodBye() {
   let result = await ask("¿Estás seguro de querer salir?");
@@ -21,6 +24,49 @@ async function goodBye() {
 
 function back() {
     window.location.href = "../index.html";
+}
+
+async function getNotes() {
+    try {
+
+        tableBody = document.querySelector(".table_body");
+        if (!tableBody) return;
+
+        baseDir = await path.documentDir() + "/notes";
+        if (!await exists(baseDir)) {
+            await mkdir(baseDir);
+        }
+
+        const files = await readDir(baseDir!);
+
+        alert(files);
+
+        tableBody.innerHTML = '';
+
+        if (files.length === 0) {
+          tableBody.innerHTML = '<tr><td colspan="2">No hay notas guardadas.</td></tr>';
+          return;
+        }
+
+        files.forEach(async (file) => {
+          if (file.name) {
+              alert(file.name);
+          }
+           /*    const note_name = await readFile(file.name).then((file) => {
+                return file.toString();
+              });
+              const note = document.createElement("tr");
+              note.classList.add("note");
+              const celda_nombre = document.createElement("td");
+              celda_nombre.textContent = note_name;
+              note.appendChild(celda_nombre);
+              tableBody.appendChild(note);
+          } */
+      });
+  } catch (error) {
+      console.error(error);
+      message("Error al obtener las notas " + error, { kind: "error" });
+  }
 }
 
 async function crearNoteAgain() {
@@ -63,8 +109,6 @@ async function createNote(noteName: string, noteContent: string) {
 }
 
 
-
-
 window.addEventListener("DOMContentLoaded", () => {
   exitButtonEl = document.querySelector(".exit-button");
   exitButtonEl?.addEventListener("click", () => {
@@ -87,6 +131,15 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   viewNoteButtonEl = document.querySelector("#view-note-button");
   viewNoteButtonEl?.addEventListener("click", () => {
+    window.location.href = "vernota.html";
+    getNotes();
+  });
+  deleteNoteButtonEl = document.querySelector("#delete-note-button");
+  deleteNoteButtonEl?.addEventListener("click", () => {
+    window.location.href = "vernota.html";
+  });
+  editNoteButtonEl = document.querySelector("#edit-note-button");
+  editNoteButtonEl?.addEventListener("click", () => {
     window.location.href = "vernota.html";
   });
 });
