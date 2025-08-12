@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/styles.css">
-    <script type="module" src="/src/main.ts" defer></script>
     <title>Ver Nota</title>
 </head>
 <body>
@@ -12,18 +11,13 @@
         <img class="logo" src="src/assets/tauri.svg" alt="Logo">
         <h1>Tus Notas</h1>
         <div class="contenedor_notas">
-            <table>
+            <table class="table">
                 <tr class="header">
                     <th>Nombre</th>
                     <th>Acciones</th>
                 </tr>
                 <tbody class="table_body">
-                    <tr class="note">
-                        <td class="note_actions">
-                            <button class="note-button" id="view-note-button_2">Ver</button>
-                            <button class="note-button" id="delete-note-button">Eliminar</button>
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -34,3 +28,4 @@
     </main>
 </body>
 </html>
+<script type="module" src="/src/main.ts" defer></script>
