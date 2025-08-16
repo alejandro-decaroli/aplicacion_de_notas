@@ -11,3 +11,9 @@ Alejandro Decaroli y Gonzalo Zinni
 ## Descripción
 
 POC de una aplicación de notas utilizando Tauri para la materia Desarrollo de Software
+
+## Demo 
+
+
+https://github.com/user-attachments/assets/4a9b62b5-9dba-4e12-91a4-1587dd28c380
+
