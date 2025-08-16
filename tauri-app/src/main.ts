@@ -93,9 +93,9 @@ async function getNotes() {
 async function crearNoteAgain() {
   let result = await ask("Nota creada exitosamente, ¿Quieres crear otra nota?");
   if (result) {
-    window.location.href = "creanota.html";
+    window.location.href = "/src/creanota.html";
   } else {
-    window.location.href = "index.html";
+    window.location.href = "/src/index.html";
   }
 }
 
@@ -209,11 +209,11 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   createNoteButtonEl = document.querySelector("#create-note-button");
   createNoteButtonEl?.addEventListener("click", () => {
-    window.location.href = "creanota.html";
+    window.location.href = "/src/creanota.html";
   });
   viewNoteButtonEl = document.querySelector("#view-note-button");
   viewNoteButtonEl?.addEventListener("click", () => {
-    window.location.href = "vernota.html";
+    window.location.href = "/src/vernota.html";
   });
 
   if (window.location.pathname.includes("creanota.html")) {
@@ -248,7 +248,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const noteName = target.getAttribute('data-note-name');
         if (noteName) {
           // Navegamos a la página de creación con el nombre de la nota como parámetro
-          window.location.href = `creanota.html?edit=${encodeURIComponent(noteName)}`;
+          window.location.href = `/src/creanota.html?edit=${encodeURIComponent(noteName)}`;
         }
       }
     });
